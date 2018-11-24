@@ -83,7 +83,7 @@
             
             <select name="gameGenre1" id="">
             <option value="">None</option>
-            <option value="fps">First toto Shooter</option>
+            <option value="fps">First Person Shooter</option>
             <option value="fg">Fighting Game</option>
             <option value="rpg">Role Playing Game</option>
             <option value="pf">Platformer</option>
@@ -129,9 +129,9 @@
                 </label>
                 <label for="">
                     <h4 class="meterText">Lore</h4>
-                    <meter value="0" min="0" max="10" class="meter" id="lo"></meter>
-                    <button type="button" onclick="addToScore(document.getElementById('lo'));">+</button>
-                    <button type="button" onclick="takeToScore(document.getElementById('lo'));">-</button>
+                    <meter value="0" min="0" max="100" class="meter" id="lo"></meter>
+                    <input type="range" id="slider3" oninput="changeScore(document.getElementById('lo'), document.getElementById('slider3'));"/>
+
                 </label>
             </div>
 
@@ -140,14 +140,14 @@
                 <label for="">
                     <h4 class="meterText">Mechanics</h4>
                     <meter value="0" min="0" max="100" class="meter" id="mech"></meter>
-                    <button type="button" onclick="addToScore(document.getElementById('mech'));">+</button>
-                    <button type="button" onclick="takeToScore(document.getElementById('mech'));">-</button>
+                    <input type="range" id="slider4" oninput="changeScore(document.getElementById('mech'), document.getElementById('slider4'));"/>
+                    
                 </label>
                 <label for="">
                     <h4 class="meterText">Diversity/Pacing</h4>
                     <meter value="0" min="0" max="100" class="meter" id="divPac"></meter>
-                    <button type="button" onclick="addToScore(document.getElementById('divPac'));">+</button>
-                    <button type="button" onclick="takeToScore(document.getElementById('divPac'));">-</button>
+                    <input type="range" id="slider5" oninput="changeScore(document.getElementById('divPac'), document.getElementById('slider5'));"/>
+                    
                 </label>
             </div>
 
@@ -155,21 +155,21 @@
                 <h3>Others</h3>
                 <label for="">
                     <h4 class="meterText">Music</h4>
-                    <meter value="0" min="0" max="10" class="meter" id="mu"></meter>
-                    <button type="button" onclick="addToScore(document.getElementById('mu'));">+</button>
-                    <button type="button" onclick="takeToScore(document.getElementById('mu'));">-</button>
+                    <meter value="0" min="0" max="100" class="meter" id="mu"></meter>
+                    <input type="range" id="slider6" oninput="changeScore(document.getElementById('mu'), document.getElementById('slider6'));"/>
+                    
                 </label>
                 <label for="">
                     <h4 class="meterText">Aesthetics</h4>
-                    <meter value="0" min="0" max="10" class="meter" id="ae"></meter>
-                    <button type="button" onclick="addToScore(document.getElementById('ae'));">+</button>
-                    <button type="button" onclick="takeToScore(document.getElementById('ae'));">-</button>
+                    <meter value="0" min="0" max="100" class="meter" id="ae"></meter>
+                    <input type="range" id="slider7" oninput="changeScore(document.getElementById('ae'), document.getElementById('slider7'));"/>
+                    
                 </label>
                 <label for="">
                     <h4 class="meterText">Originality</h4>
-                    <meter value="0" min="0" max="10" class="meter" id="og"></meter>
-                    <button type="button" onclick="addToScore(document.getElementById('og'));">+</button>
-                    <button type="button" onclick="takeToScore(document.getElementById('og'));">-</button>
+                    <meter value="0" min="0" max="100" class="meter" id="og"></meter>
+                    <input type="range" id="slider8" oninput="changeScore(document.getElementById('og'), document.getElementById('slider8'));"/>
+                    
                 </label>
             </div>
         </form>
