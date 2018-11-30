@@ -119,17 +119,17 @@
                 <h3>Story</h3>
                 <label for="">
                     <h4 class="meterText">Narrative</h4>
-                    <meter value="0" min="0" max="100" class="meter" id="narr"></meter>
+                    <meter value="0" min="0" max="100" optimum="0" class="meter" id="narr"></meter>
                     <input type="range" id="slider" oninput="changeScore(document.getElementById('narr'), document.getElementById('slider'));"/>
                 </label>
                 <label for="">
                     <h4 class="meterText">Characters</h4>
-                    <meter value="0" min="0" max="100" class="meter" id="char"></meter>
+                    <meter value="0" min="0" max="100" optimum="0" class="meter" id="char"></meter>
                     <input type="range" id="slider2" oninput="changeScore(document.getElementById('char'), document.getElementById('slider2'));"/>
                 </label>
                 <label for="">
                     <h4 class="meterText">Lore</h4>
-                    <meter value="0" min="0" max="100" class="meter" id="lo"></meter>
+                    <meter value="0" min="0" max="100" optimum="0"class="meter" id="lo"></meter>
                     <input type="range" id="slider3" oninput="changeScore(document.getElementById('lo'), document.getElementById('slider3'));"/>
 
                 </label>
@@ -139,13 +139,13 @@
                 <h3>Gameplay</h3>
                 <label for="">
                     <h4 class="meterText">Mechanics</h4>
-                    <meter value="0" min="0" max="100" class="meter" id="mech"></meter>
+                    <meter value="0" min="0" max="100" optimum="0"class="meter" id="mech"></meter>
                     <input type="range" id="slider4" oninput="changeScore(document.getElementById('mech'), document.getElementById('slider4'));"/>
                     
                 </label>
                 <label for="">
                     <h4 class="meterText">Diversity/Pacing</h4>
-                    <meter value="0" min="0" max="100" class="meter" id="divPac"></meter>
+                    <meter value="0" min="0" max="100" optimum="0"class="meter" id="divPac"></meter>
                     <input type="range" id="slider5" oninput="changeScore(document.getElementById('divPac'), document.getElementById('slider5'));"/>
                     
                 </label>
@@ -155,19 +155,19 @@
                 <h3>Others</h3>
                 <label for="">
                     <h4 class="meterText">Music</h4>
-                    <meter value="0" min="0" max="100" class="meter" id="mu"></meter>
+                    <meter value="0" min="0" max="100" optimum="0"class="meter" id="mu"></meter>
                     <input type="range" id="slider6" oninput="changeScore(document.getElementById('mu'), document.getElementById('slider6'));"/>
                     
                 </label>
                 <label for="">
                     <h4 class="meterText">Aesthetics</h4>
-                    <meter value="0" min="0" max="100" class="meter" id="ae"></meter>
+                    <meter value="0" min="0" max="100"optimum="0" class="meter" id="ae"></meter>
                     <input type="range" id="slider7" oninput="changeScore(document.getElementById('ae'), document.getElementById('slider7'));"/>
                     
                 </label>
                 <label for="">
                     <h4 class="meterText">Originality</h4>
-                    <meter value="0" min="0" max="100" class="meter" id="og"></meter>
+                    <meter value="0" min="0" max="100"optimum="0" class="meter" id="og"></meter>
                     <input type="range" id="slider8" oninput="changeScore(document.getElementById('og'), document.getElementById('slider8'));"/>
                     
                 </label>
@@ -199,7 +199,7 @@
             + document.getElementById("mech").value + document.getElementById("lo").value + document.getElementById("char").value + document.getElementById("narr").value;
             
             var finalRating = totalScore * 1.25;
-            document.getElementById("rating").innerHTML = document.getElementById("h1").innerHTML + " Total Score is... " + finalRating + "/100";
+            document.getElementById("rating").innerHTML = document.getElementById("h1").innerHTML + " Total Score is... " + finalRating/10 + "/100";
         }
     </script>
 </body>
