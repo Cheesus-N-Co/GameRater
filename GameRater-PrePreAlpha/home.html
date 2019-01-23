@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Rater - Home Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body onload="anim_a()">
+    <header>
+        <h1 id="h1">Game Rater</h1>
+        <form action="" id="searchBar">
+            <label for="searchName">Find a game</label>
+            <input type="text" name="searchName" id="searchName" placeholder="Enter a game name" size="25">
+            <Button onclick="search();">Search for Game</Button>
+        </form>
+    </header>
+    
+     <div> 
+            <img name="slide" height="500"/>
+    </div>
+    
+    <script>
+        function search()
+        {
+            var searchedName = document.getElementById("searchName").value;
+
+            searchedName = searchedName.toUpperCase();
+
+            var gameName = "";
+            var nameLength = searchedName.length;
+            var c;
+            for(var i = 0; i < nameLength; i++)
+            {
+                c = searchedName.charAt(i);
+                if(c != " ")
+                {
+                    gameName += c;
+                }
+            }  
+            alert(gameName);
+
+            if(gameName == "PERSONA5")
+            {
+                document.write("Persona 5 is a masterpiece, with an average score of 100000000/10 this game should be played by everyone unless they want to miss the greatest videogame experience ever created by human beings");
+            }
+        }
+        
+         var i = 0; //Sert à incrémenter de façon à changer les images du diaporama
+        var images = [];
+
+        images[0] = 'images/Persona_5.jpg';
+        images[1] = 'images/SteamWorld.jpg';
+        images[2] = 'images/Skyward_Sword.jpg';
+
+                function changeImg(){
+                    document.slide.src = images[i];
+
+                    if(i < images.length - 1){
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    
+                }
+
+                var myVar; //En Javascript, il faut assigner l'intervalle à une variable pour créer celui-ci
+
+                function anim_a(){
+        
+                    
+                    myVar = setInterval(appar, 25); //Ici, je demande d'exécuter la fonction appar() à chaque 25 millisecondes. (0.025 secondes)
+                    
+               
+                   }
+
+                   var opacity = 0;
+
+                    
+
+                   function appar(){
+
+                       if(opacity < 1){
+                        document.slide.src = images[i];
+                        opacity = opacity + 0.01;
+                        slide.style.opacity = opacity;
+                        //Puisque l'opération ici haut est éxécutée un nombre très élevé de fois en peu de temps, cela donne un impression de fondu! (Merci persistance rétinienne)
+                       } else{
+                           clearInterval(myVar); //Lorsque l'image a fini d'apparaître, (opacity = 1) j'annule le setInterval.
+                           setTimeout(anim_d, 3000);//Puis, je prépare la fonction qui va faire disparaître l'image en fondu
+                       }
+                   
+
+                }
+                var myVar2; //Même procédé ici-bas
+                function anim_d(){
+        
+                    
+                myVar2 = setInterval(dispar, 25);
+        
+   
+                }
+                var opacity = 0;
+        
+                function dispar(){
+
+                    if(opacity > 0){
+                document.slide.src = images[i];
+                opacity = opacity - 0.01;
+                slide.style.opacity = opacity;
+
+                    } else{
+                        clearInterval(myVar2);
+                        changeImg();
+                        setTimeout(anim_a, 2000);
+                    }
+               
+
+    }
+
+    </script>
+
+    <section id="startSection">
+        <Button onclick="goToRatePage();">Ready to rate !</Button>
+        <script>
+            function goToRatePage()
+            {
+                ratingPage = "ratingPage.html"
+                window.location = ratingPage;
+            }
+        </script>
+    </section>
+</body>
+</html>

@@ -1,0 +1,206 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Rater - Rating</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <header>
+        <h1 id="h1"></h1>
+        <form action="" id="searchBar">
+            <label for="searchName">Find a game</label>
+            <input type="text" name="searchName" id="searchName" placeholder="Enter a game name" size="25">
+            <Button onclick="search();">Search for Game</Button>
+        </form>
+        <br>
+        <label for="gameName">What's the game name ?</label>
+        <input type="text" name="gameName" id="gameName" placeholder="Persona 5" size="20">
+        <button onclick="gameName(document.getElementById('gameName').value);">Game Name Chosen</button>
+        <br>
+        <br>
+    </header>
+    <script>
+        function search()
+        {
+            var searchedName = document.getElementById("searchName").value;
+
+            searchedName = searchedName.toUpperCase();
+
+            var gameName = "";
+            var nameLength = searchedName.length;
+            var c;
+            for(var i = 0; i < nameLength; i++)
+            {
+                c = searchedName.charAt(i);
+                if(c != " ")
+                {
+                    gameName += c;
+                }
+            }  
+            alert(gameName);
+
+            if(gameName == "PERSONA5")
+            {
+                document.write("Persona 5 is a masterpiece, with an average score of 100000000/10 this game should be played by everyone unless they want to miss the greatest videogame experience ever created by human beings");
+            }
+        }
+
+        function gameName(nameOfRatedGame)
+        {
+            document.getElementById("h1").innerHTML = nameOfRatedGame;
+        }
+    </script>
+    <section id="ratingSection">
+        <script>
+            function restart()
+            {
+                
+            }
+        </script>
+        
+        <div id="genres">
+            First Genre
+            <select name="gameGenre1" id="">
+            <option value="">None</option>
+            <option value="fps">First Person Shooter</option>
+            <option value="fg">Fighting Game</option>
+            <option value="rpg">Role Playing Game</option>
+            <option value="pf">Platformer</option>
+            <option value="h&s">Hack & Slash</option>
+            <option value="bta">Beat Them Up</option>
+            <option value="act">Action</option>
+            <option value="adv">Adventure</option>
+            <option value="tb">Turn-Based Game</option>
+            <option value="moba">Multiplayer Online Battle Arena</option>
+            <option value="st">Strategy Game</option>
+            <option value="rts">Real Time Strategy</option>
+            </select>
+            Second Genre
+            <select name="gameGenre2" id="">
+            <option value="">None</option>
+            <option value="fps">First Person Shooter</option>
+            <option value="fg">Fighting Game</option>
+            <option value="rpg">Role Playing Game</option>
+            <option value="pf">Platformer</option>
+            <option value="h&s">Hack & Slash</option>
+            <option value="bta">Beat Them Up</option>
+            <option value="act">Action</option>
+            <option value="adv">Adventure</option>
+            <option value="tb">Turn-Based Game</option>
+            <option value="moba">Multiplayer Online Battle Arena</option>
+            <option value="st">Strategy Game</option>
+            <option value="rts">Real Time Strategy</option>
+            </select>
+        </div>
+
+        <form action="">
+            <div class="ratingCriterias">
+                <h3>Story</h3>
+                <label for="">
+                    <h4 class="meterText_col1">Narrative</h4>
+                    <meter value="0" min="0" max="100" optimum="0" class="meter" id="narr"></meter>
+                    <input type="range" id="slider" class="sliders" oninput="changeScore(document.getElementById('narr'), document.getElementById('slider'));"/>
+                </label>
+                <label for="">
+                    <h4 class="meterText_col2">Characters</h4>
+                    <meter value="0" min="0" max="100" optimum="0" class="meter" id="char"></meter>
+                    <input type="range" id="slider2" class="sliders" oninput="changeScore(document.getElementById('char'), document.getElementById('slider2'));"/>
+                </label>
+                <label for="">
+                    <h4 class="meterText_col3">Lore</h4>
+                    <meter value="0" min="0" max="100" optimum="0"class="meter" id="lo"></meter>
+                    <input type="range" id="slider3" class="sliders" oninput="changeScore(document.getElementById('lo'), document.getElementById('slider3'));"/>
+                </label>
+                
+                <label class="comment">
+                    Add a comment on this element of the game
+                    <textarea id="ta1" name="message" style="resize:none"></textarea>
+                </label>
+                
+                <button onclick="confirmText(ta1);">Press</button>
+            </div>
+
+            <div class="ratingCriterias">
+                <h3>Gameplay</h3>
+                <label for="">
+                    <h4 class="meterText_col1">Mechanics</h4>
+                    <meter value="0" min="0" max="100" optimum="0"class="meter" id="mech"></meter>
+                    <input type="range" id="slider4" class="sliders" oninput="changeScore(document.getElementById('mech'), document.getElementById('slider4'));"/>
+                </label>
+                
+                <label for="">
+                    <h4 class="meterText_col2">Diversity/Pacing</h4>
+                    <meter value="0" min="0" max="100" optimum="0"class="meter" id="divPac"></meter>
+                    <input type="range" id="slider5" class="sliders" oninput="changeScore(document.getElementById('divPac'), document.getElementById('slider5'));"/>
+                </label>
+                
+                <label class="comment">
+                    Add a comment on this element of the game
+                    <textarea name="message" style="resize:none"></textarea>
+                </label>
+                
+            </div>
+
+            <div class="ratingCriterias">
+                <h3>Others</h3>
+                <label for="">
+                    <h4 class="meterText_col1">Music</h4>
+                    <meter value="0" min="0" max="100" optimum="0"class="meter" id="mu"></meter>
+                    <input type="range" id="slider6" class="sliders" oninput="changeScore(document.getElementById('mu'), document.getElementById('slider6'));"/>
+                    
+                </label>
+                <label for="">
+                    <h4 class="meterText_col2">Aesthetics</h4>
+                    <meter value="0" min="0" max="100"optimum="0" class="meter" id="ae"></meter>
+                    <input type="range" id="slider7" class="sliders" oninput="changeScore(document.getElementById('ae'), document.getElementById('slider7'));"/>
+                    
+                </label>
+                <label for="">
+                    <h4 class="meterText_col3">Originality</h4>
+                    <meter value="0" min="0" max="100"optimum="0" class="meter" id="og"></meter>
+                    <input type="range" id="slider8" class="sliders" oninput="changeScore(document.getElementById('og'), document.getElementById('slider8'));"/>
+                </label>
+                <label class="comment">
+                    Add a comment on this element of the game
+                    <textarea name="message" style="resize:none"></textarea>
+                </label>
+            </div>
+        </form>
+
+        <div id="ratingEnd">
+            <button onclick="confirmRating();" class="end">Confirm Rating</button>
+            <button onclick="restart();" class="end">Restart</button>
+        </div>
+    </section>
+
+    <footer>
+        <h1 id="rating"></h1>
+    </footer>
+    <script>
+        function changeScore(meter, slider)
+        {
+
+            var newMeter = meter;
+            var newSlider = slider;
+            newMeter.value = newSlider.value;
+            meter = newMeter;
+        }
+
+        function confirmRating()
+        {
+            var totalScore = document.getElementById("og").value + document.getElementById("ae").value + document.getElementById("mu").value + document.getElementById("divPac").value
+            + document.getElementById("mech").value + document.getElementById("lo").value + document.getElementById("char").value + document.getElementById("narr").value;
+            
+            var finalRating = totalScore * 1.25;
+            document.getElementById("rating").innerHTML = document.getElementById("h1").innerHTML + " Total Score is... " + finalRating/10 + "/100";
+        }
+
+        function confirmText(value)
+        {
+            myText = document.getElementById(value);
+            myText.disabled = true;
+        }
+    </script>
+</body>
